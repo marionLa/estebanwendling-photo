@@ -39,11 +39,35 @@ Le CSS/JS provient du thème Fluxus d'origine, copié tel quel dans `assets/flux
 
 Pour plus de détails (layouts, ajout de contenu, formulaire de contact, déploiement), voir [CLAUDE.md](CLAUDE.md) et [SPEC.md](SPEC.md).
 
-## Ajouter du contenu
+## Ajouter du contenu (guide pour le photographe)
 
-**Nouvelle section** : créer `assets/nomsection/` avec une `couverture.jpg` (couverture) et les autres photos. Optionnellement, ajouter `assets/nomsection/infos.txt` (un lieu par ligne). Le plugin détecte tout automatiquement au build suivant.
+Aucune interface d'administration n'est nécessaire : ajouter des photos revient à ajouter des fichiers dans le dossier `assets/` du repo GitHub, puis à valider ("commit"). Le site se reconstruit et se republie automatiquement dans les minutes qui suivent.
 
-**Photos du slider d'accueil** : ajouter des `.jpg` dans `assets/slides/`.
+### Ajouter une nouvelle section au portfolio
+
+1. Dans `assets/`, créer un nouveau dossier avec le nom de la section (ex. `assets/japon/`).
+2. Y déposer les photos, en nommant l'une d'elles `couverture.jpg` — c'est celle qui apparaîtra comme vignette dans la grille du portfolio.
+3. (Optionnel) créer un fichier texte `assets/japon/infos.txt` avec un lieu par ligne (ex. `Tokyo`, `Kyoto`) — affiché dans la barre latérale de la section.
+4. Valider les changements ("commit"). La page `portfolio/japon/` est générée automatiquement, sans rien configurer d'autre.
+
+### Ajouter des photos au diaporama de la page d'accueil
+
+Déposer des fichiers `.jpg` dans `assets/slides/` (pas de sous-dossier, pas de `couverture.jpg`).
+
+### Comment déposer les fichiers, concrètement
+
+- **Sans terminal, depuis le navigateur** : ouvrir le dossier voulu sur GitHub, bouton *Add file → Upload files*, glisser les photos, puis *Commit changes*. Le plus simple pour un usage occasionnel.
+- **En ligne de commande (`git`)** : copier les photos dans le dossier local, puis `git add`, `git commit`, `git push`. Nécessaire si on veut lancer le script de compression avant d'envoyer (voir ci-dessous).
+
+### Compresser les photos avant de les envoyer
+
+Le repo doit rester sous ~1 Go au total. Avant de committer nos nouvelles photos en ligne de commande, lancer :
+
+```bash
+bash optimize-photos.sh
+```
+
+Ce script redimensionne (max ~2200px) et recompresse (qualité ~82) toutes les photos de `assets/`, ce qui réduit leur poids de 80-90% sans perte visible à l'écran. **Ne pas le relancer plusieurs fois sur des photos déjà optimisées** (la compression JPEG répétée dégrade la qualité). Si les photos sont ajoutées depuis le navigateur (sans passer par ce script), il vaut mieux les redimensionner soi-même avant (ex. export "web" depuis Lightroom/Photoshop, ~2000-2500px de large).
 
 ## Déploiement
 
