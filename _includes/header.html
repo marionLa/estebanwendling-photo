@@ -1,0 +1,24 @@
+<header class="site-header js-site-header">
+  <div class="site-header__inner">
+    <div class="logo-container col-auto">
+      <a class="site-logo js-site-logo" href="{{ '/' | relative_url }}" title="{{ site.title }}" rel="home">
+        <img src="{{ '/assets/images/logod.jpg' | relative_url }}" height="42" alt="{{ site.title }}" />
+      </a>
+    </div>
+    <div class="col site-navigation" data-image="">
+      <nav class="secondary-navigation clearfix col-auto">
+        <ul class="menu">
+          <li class="menu-item{% if page.url == '/' %} current-menu-item{% endif %}">
+            <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Accueil</a>
+          </li>
+          <li class="menu-item{% if page.url contains '/portfolio' %} current-menu-item{% endif %}">
+            <a href="{{ '/portfolio/' | relative_url }}"{% if page.url contains '/portfolio' %} aria-current="page"{% endif %}>Portfolio</a>
+          </li>
+          <li class="menu-item{% if page.url contains '/a-propos' %} current-menu-item{% endif %}">
+            <a href="{{ '/a-propos/' | relative_url }}"{% if page.url contains '/a-propos' %} aria-current="page"{% endif %}>A propos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

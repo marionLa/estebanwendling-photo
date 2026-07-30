@@ -1,0 +1,20 @@
+title: "Esteban Wendling – Photographie"
+url: ""
+baseurl: ""
+
+formspree_id: ""
+
+instagram_url: "https://www.instagram.com/estebanwen/"
+linkedin_url: "https://www.linkedin.com/in/esteban-wendling-b4159092/"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - estebanwendling.fr/
+  - .github/
+  - CLAUDE.md
+  - .idea/
+  - .claude/
+
+keep_files:
+  - .nojekyll

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="horizontal-page no-scroll">
+<head>
+{% include head.html %}
+<style>
+  #hero {
+    position: fixed;
+    top: 70px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
+</head>
+<body class="home">
+<div id="page-wrapper">
+  {% include header.html %}
+  <div id="main" class="site">
+    <div id="hero"></div>
+  </div>
+  <div class="site-footer-push"></div>
+</div>
+{% include footer.html %}
+<script>
+  var slides = {{ site.data.slides | jsonify }};
+  if (slides.length > 0) {
+    var pick = slides[Math.floor(Math.random() * slides.length)];
+    document.getElementById('hero').style.backgroundImage = 'url(' + pick + ')';
+  }
+</script>
+</body>
+</html>

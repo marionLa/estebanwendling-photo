@@ -1,0 +1,10 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+estebanwendling.fr/
+.idea/
+.claude/
+*.iml
+Gemfile.lock

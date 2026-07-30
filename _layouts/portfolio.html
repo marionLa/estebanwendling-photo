@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="layout-portfolio-grid layout-portfolio-grid-horizontal horizontal-page">
+<head>
+{% include head.html %}
+</head>
+<body class="archive tax-fluxus-project-type">
+<div id="page-wrapper">
+  {% include header.html %}
+  <div id="main" class="site">
+    <div class="portfolio-grid js-portfolio-grid" data-aspect-ratio="auto" data-orientation="horizontal" data-columns="3" data-rows="2">
+      {% for section in site.data.sections %}
+      <article class="grid-project js-grid-project size-1" data-size="1">
+        <a href="{{ section.slug | prepend: '/portfolio/' | append: '/' | relative_url }}" class="grid-project__preview" style="background-image: url({{ section.cover | relative_url }})" data-max-size="{{ section.cover | relative_url }}">
+          <img class="hide" src="{{ section.cover | relative_url }}" alt="{{ section.title }}" />
+        </a>
+        <h2 class="grid-project__overlay radial-overlay">
+          <a class="grid-project__inner">
+            <div class="entry-title">{{ section.title }}</div>
+          </a>
+        </h2>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="site-footer-push"></div>
+</div>
+{% include footer.html %}
+</body>
+</html>

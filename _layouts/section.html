@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="horizontal-page">
+<head>
+{% include head.html %}
+<link rel="stylesheet" href="{{ '/assets/css/section.css' | relative_url }}" />
+</head>
+<body class="fluxus_portfolio-template-default single single-fluxus_portfolio">
+<div id="page-wrapper">
+  {% include header.html %}
+  {% assign section = site.data.sections | where: "slug", page.section_slug | first %}
+  <div id="main" class="site site--has-sidebar">
+    <div id="content" class="site-content">
+      <article class="js-portfolio-single horizontal-content">
+        {% for photo in section.photos %}
+        <figure class="horizontal-content__item js-horizontal-content__item js-global-nav-item">
+          <div class="horizontal-media aspect aspect--image" data-type="image">
+            <div class="aspect__media">
+              <img src="{{ photo.src | relative_url }}"
+                   alt="{{ section.title }}"
+                   data-width="{{ photo.width }}"
+                   data-height="{{ photo.height }}" />
+            </div>
+          </div>
+        </figure>
+        {% endfor %}
+      </article>
+    </div>
+    <div class="sidebar sidebar-portfolio-single">
+      <div class="scroll-container">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport">
+          <div class="overview">
+            <hgroup>
+              <h1 class="title">{{ section.title }}</h1>
+            </hgroup>
+            {% if section.infos and section.infos.size > 0 %}
+            <aside class="widget widget-project-custom-info">
+              <span class="decoration"></span>
+              <h3 class="widget-title">Infos</h3>
+              <div class="widget-content">
+                {% for info in section.infos %}{{ info }}{% unless forloop.last %}<br />
+                {% endunless %}{% endfor %}
+              </div>
+            </aside>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer-push"></div>
+</div>
+{% include footer.html %}
+<script src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
+</body>
+</html>

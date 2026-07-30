@@ -1,0 +1,15 @@
+<form action="https://formspree.io/f/{{ site.formspree_id }}" method="POST" class="contact-form" style="max-width: 480px; margin: 0 auto;">
+  <input type="text" name="_gotcha" style="display:none" />
+  <div class="mb-1">
+    <input type="text" name="name" placeholder="Votre nom" required style="width: 100%;" />
+  </div>
+  <div class="mb-1">
+    <input type="email" name="email" placeholder="Votre email" required style="width: 100%;" />
+  </div>
+  <div class="mb-1">
+    <textarea name="message" rows="6" placeholder="Votre message" required style="width: 100%;"></textarea>
+  </div>
+  <div style="text-align: center;">
+    <button type="submit">Envoyer</button>
+  </div>
+</form>
