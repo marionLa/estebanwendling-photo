@@ -28,7 +28,8 @@ jobs:
           bundler-cache: true
 
       - name: Inject Formspree ID
-        run: sed -i "s/formspree_id: \"\"/formspree_id: \"${{ secrets.FORMSPREE_ID }}\"/" _config.yml
+        run: |
+          sed -i "s/formspree_id: \"\"/formspree_id: \"${{ secrets.FORMSPREE_ID }}\"/" _config.yml
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
