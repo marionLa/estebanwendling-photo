@@ -6,3 +6,17 @@
  *
  * Add your CSS modifications below:
  */
+
+/* Réseaux sociaux : dans le menu mobile (burger), pas dans le menu desktop */
+@media screen and (min-width: 769px) {
+  .menu-item--social {
+    display: none;
+  }
+}
+
+/* Réseaux sociaux : retirés du pied de page sur mobile (déjà dans le menu) */
+@media screen and (max-width: 768px) {
+  .site-footer .social-networks {
+    display: none;
+  }
+}

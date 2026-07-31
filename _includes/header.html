@@ -17,6 +17,12 @@
           <li class="menu-item{% if page.url contains '/a-propos' %} current-menu-item{% endif %}">
             <a href="{{ '/a-propos/' | relative_url }}"{% if page.url contains '/a-propos' %} aria-current="page"{% endif %}>A propos</a>
           </li>
+          <li class="menu-item menu-item--social">
+            <a href="{{ site.instagram_url }}" target="_blank" rel="noopener nofollow">Instagram</a>
+          </li>
+          <li class="menu-item menu-item--social">
+            <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener nofollow">LinkedIn</a>
+          </li>
         </ul>
       </nav>
     </div>

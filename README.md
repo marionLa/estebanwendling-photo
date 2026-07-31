@@ -16,7 +16,7 @@ bundle install
 ## Développement local
 
 ```bash
-bundle exec jekyll serve   # → http://localhost:4000
+    bundle exec jekyll serve   # → http://localhost:4000
 ```
 
 ## Build production
@@ -66,6 +66,8 @@ Le repo doit rester sous ~1 Go au total. Avant de committer nos nouvelles photos
 ```bash
 bash optimize-photos.sh
 ```
+
+Sur Mac, sans passer par le Terminal : double-cliquer sur `optimiser-photos.command` dans le Finder. Il installe automatiquement les outils nécessaires (Homebrew, ImageMagick, jpegoptim) s'ils manquent, puis lance l'optimisation. *Au tout premier lancement, si le Finder refuse d'ouvrir le fichier ("développeur non identifié"), faire un clic droit dessus → "Ouvrir" (une seule fois).*
 
 Ce script redimensionne (max ~2200px) et recompresse (qualité ~82) toutes les photos de `assets/`, ce qui réduit leur poids de 80-90% sans perte visible à l'écran. **Ne pas le relancer plusieurs fois sur des photos déjà optimisées** (la compression JPEG répétée dégrade la qualité). Si les photos sont ajoutées depuis le navigateur (sans passer par ce script), il vaut mieux les redimensionner soi-même avant (ex. export "web" depuis Lightroom/Photoshop, ~2000-2500px de large).
 

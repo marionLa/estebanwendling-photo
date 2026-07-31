@@ -94,3 +94,33 @@
 
 .lb-prev { left: 16px; }
 .lb-next { right: 16px; }
+
+/* Mobile : la galerie devient une liste verticale, photos non recadrées */
+@media screen and (max-width: 768px) {
+  .horizontal-content__item {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+  }
+
+  .horizontal-content__item:first-child {
+    margin-left: 0 !important;
+  }
+
+  .horizontal-media,
+  .aspect {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .aspect__media {
+    height: auto !important;
+  }
+
+  .aspect__media img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
