@@ -4,7 +4,7 @@
     <a rel="noopener" class="icon-social icon-linkedin-with-circle" href="{{ site.linkedin_url }}" target="_blank" title="linkedin" rel="nofollow"></a>
   </div>
   <div class="footer-links">
-    <div class="credits">© Esteban Wendling {% assign y = 'now' | date: "%Y" %}{{ y }}</div>
+    <div class="credits">© Esteban Wendling {% assign y = 'now' | date: "%Y" %}{{ y }}{% if page.url contains '/a-propos' %} · Crafted with love & the machine by <a href="https://www.linkedin.com/in/marionlabbe" target="_blank" rel="noopener nofollow">Ixora</a>{% endif %}</div>
   </div>
   <div class="nav-tip js-nav-tip">
     Use arrows
